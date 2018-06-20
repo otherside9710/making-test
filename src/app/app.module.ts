@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { NofoundPageComponent } from './components/nofound-page/nofound-page.component';
-
+import { ContainerComponent } from './components/container/container.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +20,8 @@ import { NofoundPageComponent } from './components/nofound-page/nofound-page.com
     LoginComponent,
     RegisterComponent,
     SuccessPageComponent,
-    NofoundPageComponent
+    NofoundPageComponent,
+    ContainerComponent
   ],
   imports: [
     BrowserModule,
