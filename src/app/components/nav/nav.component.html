@@ -15,8 +15,8 @@
       <li class="nav-item">
         <a class="nav-link" routerLink="/sing-up" href="#">Registrarse</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/exit" href="#">Salir</a>
+      <li class="nav-item" *ngIf="isLogin">
+        <a class="nav-link" (click)="logoutUser()" href="#">Salir</a>
       </li>
     </ul>
     <span class="navbar-text" style="font-family: 'Amatic SC', cursive; color: white">
