@@ -2,58 +2,24 @@
 <div class="container">
   <article class="card-body mx-auto" style="max-width: 400px;">
     <h4 class="card-title mt-3 text-center">Registro</h4>
-    <form>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-user"></i> </span>
-        </div>
-        <input name="" class="form-control" [autofocus]="true" placeholder="Usuario" type="text">
-      </div>
+    <form (submit)="addUser()">
       <div class="form-group input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
         </div>
-        <input name="" class="form-control" placeholder="Email" type="email">
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
-        </div>
-        <select class="custom-select" style="max-width: 120px;">
-          <option selected="">+57</option>
-          <option value="1">+972</option>
-          <option value="2">+198</option>
-          <option value="3">+701</option>
-        </select>
-        <input name="" class="form-control" placeholder="Telefono" type="text">
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-building"></i> </span>
-        </div>
-        <select class="form-control">
-          <option selected=""> Seleccione su profesion</option>
-          <option>Diseñador</option>
-          <option>Programador</option>
-          <option>Contador</option>
-        </select>
+        <input name="email" class="form-control" [autofocus]="true" required [(ngModel)]="email" placeholder="Email" type="email">
       </div>
       <div class="form-group input-group">
         <div class="input-group-prepend">
           <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
         </div>
-        <input class="form-control" placeholder="Ingrese contaseña" type="password">
-      </div>
-      <div class="form-group input-group">
-        <div class="input-group-prepend">
-          <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-        </div>
-        <input class="form-control" placeholder="Repita contaseña" type="password">
+        <input name="pass" class="form-control" required [(ngModel)]="pass" placeholder="Ingrese contraseña" type="password">
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary btn-block"> Crear Cuenta</button>
       </div>
       <p class="text-center">Tiene una cuenta? <a href="/login">Ingrese Aquí.</a></p>
     </form>
+    <!--<img src="assets/backlogo.png" height="504" width="896"/> -->
   </article>
 </div>

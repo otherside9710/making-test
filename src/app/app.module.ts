@@ -11,6 +11,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { SuccessPageComponent } from './components/success-page/success-page.component';
 import { NofoundPageComponent } from './components/nofound-page/nofound-page.component';
 import { ContainerComponent } from './components/container/container.component';
+import { AuthService } from './services/auth.service';
+import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from 'angularfire2';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+
+import { environment } from '../environments/environment';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,9 +32,14 @@ import { ContainerComponent } from './components/container/container.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    AngularFireAuthModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
