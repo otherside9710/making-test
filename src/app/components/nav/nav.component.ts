@@ -11,8 +11,10 @@ import {Router} from '@angular/router';
 export class NavComponent implements OnInit {
 
   public isLogin: boolean;
+  public isGoogle: boolean;
   public nameUser: string;
-  public emailUsuer: string;
+  public emailUser: string;
+  public photoUser: string;
 
   constructor(
     public authService: AuthService,
@@ -26,7 +28,8 @@ export class NavComponent implements OnInit {
           if (auth) {
             this.isLogin = true;
             this.nameUser = auth.displayName;
-            this.emailUsuer = auth.email;
+            this.emailUser = auth.email;
+            this.photoUser = auth.photoURL;
           } else {
             this.isLogin = false;
           }

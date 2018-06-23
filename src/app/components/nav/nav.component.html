@@ -19,7 +19,13 @@
         <a class="nav-link" (click)="logoutUser()" href="#">Salir</a>
       </li>
     </ul>
-    <span class="navbar-text" style="font-family: 'Amatic SC', cursive; color: white">
+    <span class="navbar-text p-lg-3" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
+      {{nameUser}}
+    </span>
+    <span class="navbar-text" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
+      <img src="{{photoUser}}" class="rounded-circle" height="40px">
+    </span>
+    <span class="navbar-text p-lg-3" *ngIf="!isGoogle" style="font-family: 'Amatic SC', cursive; color: white">
       ~You are the owner of your future~
     </span>
   </div>

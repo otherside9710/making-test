@@ -12,7 +12,6 @@ export class LoginComponent implements OnInit {
 
   public email: string;
   public pass: string;
-  public response;
 
   constructor(
     public authService: AuthService,
@@ -34,4 +33,14 @@ export class LoginComponent implements OnInit {
     });
   }
 
+  googleLogin() {
+    this.authService.loginGoogle()
+      .then((res) => {
+        this.router.navigate(['/task']);
+        swal('Login Correcto', 'logueado con google', 'success');
+      }).catch(err => {
+      swal('No se pudo loguear', err.message, 'error');
+    });
+
+  }
 }
