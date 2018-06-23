@@ -1,32 +1,35 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <a class="navbar-brand">
-    <img style="height: 40px" src="https://lh3.googleusercontent.com/jLnMOwTTKOnJwHsz67cDAm2yPKkmHgRMaqXa867AxZksXtYjvFaaT10T6Bq8erSmHCOwMaI7eUYGKo0eg-E1eOs-Sq1wte7Sk2_8yfuEqWtPCyD80CfxoyOEY-UVhHXSy02OTnApX3glETx0H0mEwYHcTs1EtLr7T0hw4JIFelpWHkHJiGFV1hUhYNuQU3ohoXl3GlWJcNsP2CE28KkMBpTFLdS9BGj45IzdXbk5trUEcFYy7--P-dBJbOzCfGmER_frkE8FGijUS0D7pBYSuLefClv-Jka62zvSzts261I66eJOjzleKVKWKB0uHM92IXvncsyWsjoA3_Oqi8lbFs1StqzlQjPUAW0fqAiP5opjIFGHZIU2UnhixdzK08vS7xmq40CWZGvlV4BO3a64k8i3SLEJvXTbIXyeDu3QmFTLXGfEV7kzVMvIsI5YkEbSYSHiA0JPNGL3OSEKSrI45CQ_cUMVbKxf5wLtwvV60j1LFCbcfZ2WoH0_NcgQkUDJ0KetDWARQPvUjSY4ea5e64VSUkamy8BMpp5VFwMl-vm06ikJ0rUt0YuXd8WqeS98=w1366-h586"></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <img style="height: 40px"
+         src="https://lh3.googleusercontent.com/jLnMOwTTKOnJwHsz67cDAm2yPKkmHgRMaqXa867AxZksXtYjvFaaT10T6Bq8erSmHCOwMaI7eUYGKo0eg-E1eOs-Sq1wte7Sk2_8yfuEqWtPCyD80CfxoyOEY-UVhHXSy02OTnApX3glETx0H0mEwYHcTs1EtLr7T0hw4JIFelpWHkHJiGFV1hUhYNuQU3ohoXl3GlWJcNsP2CE28KkMBpTFLdS9BGj45IzdXbk5trUEcFYy7--P-dBJbOzCfGmER_frkE8FGijUS0D7pBYSuLefClv-Jka62zvSzts261I66eJOjzleKVKWKB0uHM92IXvncsyWsjoA3_Oqi8lbFs1StqzlQjPUAW0fqAiP5opjIFGHZIU2UnhixdzK08vS7xmq40CWZGvlV4BO3a64k8i3SLEJvXTbIXyeDu3QmFTLXGfEV7kzVMvIsI5YkEbSYSHiA0JPNGL3OSEKSrI45CQ_cUMVbKxf5wLtwvV60j1LFCbcfZ2WoH0_NcgQkUDJ0KetDWARQPvUjSY4ea5e64VSUkamy8BMpp5VFwMl-vm06ikJ0rUt0YuXd8WqeS98=w1366-h586"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/" style=" font-family: 'Rancho', cursive; font-size: 19px">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/login" id="login">Login</a>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/login" style="font-family: 'Rancho', cursive; font-size: 19px" id="login">Login</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="/sing-up" href="#">Registrarse</a>
+      <li class="nav-item active">
+        <a class="nav-link" routerLink="/sing-up" style="font-family: 'Rancho', cursive; font-size: 19px" href="#">Registrarse</a>
       </li>
-      <li class="nav-item" *ngIf="isLogin">
-        <a class="nav-link" (click)="logoutUser()" href="#">Salir</a>
-      </li>
+
     </ul>
     <span class="navbar-text p-lg-3" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
       {{nameUser}}
     </span>
-    <span class="navbar-text" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
+    <span class="navbar-text p-lg-2" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
       <img src="{{photoUser}}" class="rounded-circle" height="40px">
     </span>
-    <span class="navbar-text p-lg-3" *ngIf="!isGoogle" style="font-family: 'Amatic SC', cursive; color: white">
+    <span class="navbar-text p-lg-1" *ngIf="!isLogin" style="font-family: 'Amatic SC', cursive; color: white">
       ~You are the owner of your future~
+    </span>
+    <span class="navbar-text" *ngIf="isLogin" style="font-family: 'Amatic SC', cursive; color: white">
+      <a class="nav-link" style="background-color: #ff0940; color: white; border-radius: 15px 50px" (click)="logoutUser()" href="#">SALIR</a>
     </span>
   </div>
 </nav>

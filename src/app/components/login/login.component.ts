@@ -37,10 +37,19 @@ export class LoginComponent implements OnInit {
     this.authService.loginGoogle()
       .then((res) => {
         this.router.navigate(['/task']);
-        swal('Login Correcto', 'logueado con google', 'success');
+        swal('Login Correcto', 'Logueado con google', 'success');
       }).catch(err => {
       swal('No se pudo loguear', err.message, 'error');
     });
+  }
 
+  facebookLogin() {
+    this.authService.loginFacebook()
+      .then((res) => {
+        this.router.navigate(['/task']);
+        swal('Login Correcto', 'Logueado con facebook', 'success');
+      }).catch(err => {
+      swal('No se pudo loguear', err.message, 'error');
+    });
   }
 }
