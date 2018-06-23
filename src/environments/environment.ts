@@ -11,7 +11,8 @@ export const environment = {
     projectId: "making-app-angular",
     storageBucket: "making-app-angular.appspot.com",
     messagingSenderId: "323119548117"
-  }
+  },
+  firebaseDB: {}
 };
 
 /*
