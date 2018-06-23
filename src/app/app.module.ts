@@ -18,6 +18,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 
 import { environment } from '../environments/environment';
 import { AuthGuard } from './guards/auth.guard';
+import { TodolistComponent } from './components/todolist/todolist.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { AuthGuard } from './guards/auth.guard';
     RegisterComponent,
     SuccessPageComponent,
     NofoundPageComponent,
-    ContainerComponent
+    ContainerComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
