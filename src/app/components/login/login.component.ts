@@ -52,4 +52,14 @@ export class LoginComponent implements OnInit {
       swal('No se pudo loguear', err.message, 'error');
     });
   }
+
+  twitterLogin() {
+    this.authService.loginTwitter()
+      .then((res) => {
+        this.router.navigate(['/task']);
+        swal('Login Correcto', 'Logueado con twitter', 'success');
+      }).catch(err => {
+      swal('No se pudo loguear', err.message, 'error');
+    });
+  }
 }
