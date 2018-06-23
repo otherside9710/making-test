@@ -1,18 +1,28 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
 <div class="card">
   <div class="card-body">
-    <h5 class="text-center">
+    <h5 class="text-center" style="font-family: 'Lobster', cursive;">
       Lista de tareas
     </h5>
     <table class="table table-sm table-hover">
+      <thead>
+        <td>Id</td>
+        <td>Nombre</td>
+        <td>Descripcion</td>
+        <td>Estado</td>
+        <td>Acciones</td>
+      </thead>
       <tbody>
-      <tr *ngFor="let product of productList">
-        <td>{{product.name}}</td>
-        <td>{{product.category}}</td>
+      <tr *ngFor="let todo of todoList">
+        <td>{{todo.$key}}</td>
+        <td>{{todo.nombre}}</td>
+        <td>{{todo.descripcion}}</td>
+        <td>{{todo.estado}}</td>
         <td>
-          <a class="btn btn-secondary text-white" (click)="onEdit(product)">
+          <a class="btn btn-secondary text-white" style="height: 35px; width: 40px" (click)="editTodo(todo)">
             <i class="far fa-edit"></i>
           </a>
-          <a class="btn btn-danger text-white" (click)="onDelete(product.$key)">
+          <a class="btn btn-danger text-white" style="height: 35px; width: 40px" (click)="deleteTodo(todo.$key)">
             <i class="fas fa-trash-alt"></i>
           </a>
         </td>

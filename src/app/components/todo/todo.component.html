@@ -1,25 +1,43 @@
 <div class="card card-body">
-  <h5 class="text-center mb-4">Informacion de la tarea</h5>
+  <h5 class="text-center mb-4" style="font-family: 'Lobster', cursive;">Informacion de la tarea</h5>
   <fieldset>
-    <form>
-      <div class="form-group has-error">
-        <input class="form-control input-lg" placeholder="Digite ID" name="id" type="text">
+    <form #todoForm="ngForm" (submit)="addTodo(todoForm)">
+      <input type="hidden" name="$key" #$key="ngModel" [(ngModel)]="todoService.selectedTodo.$key">
+      <div class="form-group has-success">
+        <input class="form-control input-lg" placeholder="Digite Nombre"
+               name="nombre"
+               #nombre="ngModel"
+               [(ngModel)]="todoService.selectedTodo.nombre"
+               type="text">
+
       </div>
       <div class="form-group has-success">
-        <input class="form-control input-lg" placeholder="Digite Nombre" name="nombre" value="" type="text">
-      </div>
-      <div class="form-group has-success">
-        <input class="form-control input-lg" placeholder="Digite Descripcion" name="descripcion" value="" type="text">
+        <input class="form-control input-lg" placeholder="Digite Descripcion"
+               name="descripcion"
+               #descripcion="ngModel"
+               [(ngModel)]="todoService.selectedTodo.descripcion"
+               type="text">
       </div>
       <div class="form-group">
-        <select class="form-control input-lg">
-          <option selecterd="">Seleccione Estado..</option>
-          <option selecterd="E">En Espera</option>
-          <option selecterd="P">En Progeso</option>
-          <option selecterd="F">Finalizada</option>
+        <select class="form-control input-lg" name="estado"
+                #estado="ngModel"
+                [(ngModel)]="todoService.selectedTodo.estado"
+        >
+          <option value="Espera">En Espera</option>
+          <option value="Progreso">En Progeso</option>
+          <option value="Finalizada">Finalizada</option>
         </select>
       </div>
-      <input class="btn btn-lg btn-primary btn-block" value="Guardar Tarea" type="submit">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <button class="btn btn-lg btn-primary btn-block" style="font-size: 14px; font-family: 'Lobster', cursive;" type="submit">Agregar</button>
+          </div>
+          <div class="col-md-6">
+            <button class="btn btn-lg btn-primary btn-block" style="font-size: 14px; font-family: 'Lobster', cursive;" type="reset" (click)="resetForm(todoForm)">Limpiar</button>
+          </div>
+        </div>
+      </div>
     </form>
   </fieldset>
 </div>

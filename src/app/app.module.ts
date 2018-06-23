@@ -21,6 +21,7 @@ import { AuthGuard } from './guards/auth.guard';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { TodoComponent } from './components/todo/todo.component';
+import { TodoService } from './services/todo.service';
 
 @NgModule({
   declarations: [
@@ -33,20 +34,21 @@ import { TodoComponent } from './components/todo/todo.component';
     SuccessPageComponent,
     NofoundPageComponent,
     ContainerComponent,
-    TodolistComponent,
-    TodoComponent
+    TodoComponent,
+    TodolistComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig, environment.firebaseDB),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule
   ],
   providers: [
     AuthService,
-    AuthGuard
+    AuthGuard,
+    TodoService
   ],
   bootstrap: [AppComponent]
 })
