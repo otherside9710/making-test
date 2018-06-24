@@ -3,7 +3,8 @@ import { TodoService } from '../../services/todo.service';
 import { Todos } from '../../models/todos';
 import {NgForm} from '@angular/forms';
 import swal from 'sweetalert2';
-import {t} from '@angular/core/src/render3';
+import { AngularFireDatabase} from 'angularfire2/database';
+import {FirebaseListObservable} from 'angularfire2/database-deprecated';
 
 @Component({
   selector: 'app-todolist',
@@ -12,9 +13,11 @@ import {t} from '@angular/core/src/render3';
 })
 export class TodolistComponent implements OnInit {
   todoList: Todos[];
+  todoListName: FirebaseListObservable<any[]>;
 
   constructor(
     private todoService: TodoService,
+    private db: AngularFireDatabase
   ) { }
 
   ngOnInit() {
@@ -46,5 +49,14 @@ export class TodolistComponent implements OnInit {
       todoForm.reset();
       this.todoService.selectedTodo = new Todos();
     }
+  }
+
+  findByNombre(filtro) {
+    this.todoListName = this.db.database.app.database.call('/todos', {
+      query: {
+        orderByChild: 'nombre',
+        equalTo: filtro
+      }
+    }) as FirebaseListObservable<any[]>;
   }
 }
